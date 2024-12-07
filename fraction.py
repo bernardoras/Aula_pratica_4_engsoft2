@@ -75,3 +75,14 @@ class Fraction:
         g_c_d = Fraction.greatest_common_divisor(new_num, new_denom)
         self.num = new_num // g_c_d
         self.denom = new_denom // g_c_d
+
+    def subtract(self, other: Fraction):
+
+        l_c_m = Fraction.least_common_multiple(self.denom, other.denom)
+
+        new_num = (l_c_m // self.denom) * self.num - (l_c_m // other.denom) * other.num
+        new_denom = l_c_m
+
+        g_c_d = Fraction.greatest_common_divisor(new_num, new_denom)
+        self.num = new_num // g_c_d
+        self.denom = new_denom // g_c_d

@@ -54,3 +54,13 @@ class TestFraction(unittest.TestCase):
         fraction = Fraction(3, 4)
         fraction.add(Fraction(0, 6))
         self.assertEqual(fraction, Fraction(3, 4))
+
+    def test_subtract_equal_denom_simplify_fraction(self):
+        fraction = Fraction(3, 4)
+        fraction.subtract(Fraction(1, 4))
+        self.assertEqual(fraction, Fraction(1, 2))
+
+    def test_subtract_different_denom_simplify_fraction(self):
+        fraction = Fraction(3, 4)
+        fraction.subtract(Fraction(0, 6))
+        self.assertEqual(fraction, Fraction(3, 4))
